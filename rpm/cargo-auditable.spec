@@ -59,7 +59,7 @@ unset LIBSSH2_SYS_USE_PKG_CONFIG
 
 %install
 install -D -d -m 0755 %{buildroot}%{_bindir}
-install -m 0755 %{_builddir}/%{name}-%{version}/target/release/cargo-auditable %{buildroot}%{_bindir}/cargo-auditable
+install -m 0755 %{_builddir}/%{name}-%{version}/upstream/target/release/cargo-auditable %{buildroot}%{_bindir}/cargo-auditable
 
 %files
 %{_bindir}/cargo-auditable
