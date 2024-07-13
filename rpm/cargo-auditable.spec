@@ -30,8 +30,8 @@ License:        ( (MIT OR Apache-2.0) AND Unicode-DFS-2016 ) AND ( 0BSD OR MIT O
 #               https://en.opensuse.org/openSUSE:Package_group_guidelines
 Group:          Development/Languages/Rust
 Url:            https://github.com/rust-secure-code/cargo-auditable
-Source0:        %{name}-%{version}.tar.zst
-Source1:        vendor.tar.zst
+Source0:        %{name}-%{version}.tar.gz
+Source1:        vendor.tar.gz
 Source2:        cargo_config
 # We can't dep on cargo-packaging because we would create a dependency loop.
 # BuildRequires:  cargo-packaging
@@ -46,9 +46,10 @@ data about the dependency tree in JSON format into a dedicated linker section of
 executable.
 
 %prep
-%autosetup -a1 -n %{name}-%{version}/upstream
-mkdir .cargo
+%setup -a1 -n %{name}-%{version}/upstream
+mkdir -p .cargo
 cp %{SOURCE2} .cargo/config
+tar -xzf %{SOURCE1}
 
 %build
 unset LIBSSH2_SYS_USE_PKG_CONFIG
@@ -64,4 +65,3 @@ install -m 0755 %{_builddir}/%{name}-%{version}/target/release/cargo-auditable %
 %{_bindir}/cargo-auditable
 
 %changelog
-
