@@ -1,0 +1,18 @@
+diff --git a/Cargo.toml b/Cargo.toml
+index de85ac4..d501fee 100644
+--- a/Cargo.toml
++++ b/Cargo.toml
+@@ -1,3 +1,4 @@
++cargo-features = ["edition2021"]
+ [workspace]
+ 
+ members = [
+diff --git a/cargo-auditable/Cargo.toml b/cargo-auditable/Cargo.toml
+index 64b37b5..fdd6aa7 100644
+--- a/cargo-auditable/Cargo.toml
++++ b/cargo-auditable/Cargo.toml
+@@ -1,3 +1,4 @@
++cargo-features = ["edition2021"]
+ [package]
+ name = "cargo-auditable"
+ version = "0.6.0"

@@ -14,7 +14,7 @@
 
 # Please submit bugfixes or comments via http://bugs.opensuse.org/
 #
-
+%define _smp_mflags -j1
 %define __rustflags -Clink-arg=-Wl,-z,relro,-z,now -C debuginfo=2 -C incremental=false
 %define __cargo CARGO_FEATURE_VENDORED=1 RUSTFLAGS="%{__rustflags}" %{_bindir}/cargo
 %define __cargo_common_opts %{?_smp_mflags}
